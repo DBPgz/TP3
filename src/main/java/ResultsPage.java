@@ -11,7 +11,9 @@ public class ResultsPage {
 
     @FindBy(css =".rc > .r >a")
     List<WebElement> listResults;
-    public ResultsPage()
+
+
+    public ResultsPage(WebDriver driver)
     {
         this.driver =driver;
         PageFactory.initElements(driver, this);

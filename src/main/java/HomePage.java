@@ -20,18 +20,20 @@ public class HomePage {
     public HomePage(WebDriver driver)
     {
 
-       this.driver =driver;
+       this.driver = driver;
        PageFactory.initElements(driver, this);
     }
 
-    public void rechercheAvecEntree(String text)
+    public ResultsPage rechercheAvecEntree(String text)
     {
-       barreRecherche.sendKeys(text);
-       barreRecherche.sendKeys(Keys.ENTER);
+        barreRecherche.sendKeys(text);
+        barreRecherche.sendKeys(Keys.ENTER);
+        return new ResultsPage(driver);
     }
-    public void rechercheAvecClick(String text)
+    public ResultsPage rechercheAvecClick(String text)
     {
         barreRecherche.sendKeys(text);
         buttonRecherche.click();
+        return new ResultsPage(driver);
     }
 }

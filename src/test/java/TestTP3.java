@@ -29,16 +29,38 @@ public class TestTP3 {
     }
 
     @Test
-    public void test1()
+    public void testEnter()
     {
+
+        //Arrange
+
         HomePage homePage = new HomePage(driver);
-        homePage.rechercheAvecClick("Bordeaux");
-        //homePage.rechercheAvecClick("Bordeaux");
+        homePage.rechercheAvecEntree("Bordeaux");
 
 
-        ResultsPage resultsPage = new ResultsPage();
+        ResultsPage resultsPage = new ResultsPage(driver);
         String result = resultsPage.getResult(0);
         Assert.assertThat(resultsPage.getResult(0), is("Site officiel de la ville de Bordeaux | Bordeaux"));
+    }
+
+    @Test
+    public void testClick()
+    {
+        HomePage homePage = new HomePage(driver);
+        ResultsPage resultsPage = homePage.rechercheAvecClick("Bordeaux");
+        String result = resultsPage.getResult(0);
+        Assert.assertThat(result, is("Site officiel de la ville de Bordeaux | Bordeaux"));
+    }
+
+    @Test
+    public void testClick2()
+    {
+        HomePage homePage = new HomePage(driver);
+
+        String result = homePage.rechercheAvecClick("Bordeaux")
+                .getResult(0);
+
+        Assert.assertThat(result, is("Site officiel de la ville de Bordeaux | Bordeaux"));
     }
 }
 
