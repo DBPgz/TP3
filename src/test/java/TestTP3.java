@@ -36,8 +36,9 @@ public class TestTP3 {
         //homePage.rechercheAvecClick("Bordeaux");
 
 
-        //ResultsPage resultsPage = new ResultsPage();
-        //Assert.assertThat(resultsPage.getResult(0), is("Site officiel de la ville de Bordeaux | Bordeaux"));
+        ResultsPage resultsPage = new ResultsPage();
+        String result = resultsPage.getResult(0);
+        Assert.assertThat(resultsPage.getResult(0), is("Site officiel de la ville de Bordeaux | Bordeaux"));
     }
 }
 

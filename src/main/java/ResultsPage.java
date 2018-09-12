@@ -1,6 +1,5 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -19,6 +18,6 @@ public class ResultsPage {
     }
     public String getResult (int index)
     {
-      return "";
+      return listResults.get(index).getText();
     }
 }
